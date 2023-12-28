@@ -1,10 +1,10 @@
-package com.springinitailizer1demo.demo;
+package com.demowebapp.securingweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class SecuringWebApplicationTests {
 
 	@Test
 	void contextLoads() {
