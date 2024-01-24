@@ -26,3 +26,10 @@ LABEL version="1.0"
 #docker buildx create --use
 #docker buildx build --platform linux/arm64 -t my-spring-boot-app-image-arm:0.1 -f Dockerfile.arm . --load
 #docker run --platform linux/arm64 -p 8080:8080 -it --rm my-spring-boot-app-image-arm:0.1
+#docker buildx inspect multiarch --bootstrap
+#docker buildx create --name multiarch --platform linux/amd64,linux/arm64 \
+#  --driver-opt network=host --buildkitd-flags '--allow-insecure-entitlement network.host'
+#ap-northeast-2211125543833.dkr.ecr.ap-northeast-2.amazonaws.com/haai-test-repository
+#  aws ecr get-login-password --region ap-northeast-2 --profile haai-infra-shared | docker login --username AWS --password-stdin 211125543833.dkr.ecr.ap-northeast-2.amazonaws.com
+#
+#  docker buildx build --push --builder multiarch --platform linux/amd64,linux/arm64 -t 211125543833.dkr.ecr.ap-northeast-2.amazonaws.com/haai-test-repository .
