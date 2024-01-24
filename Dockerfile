@@ -33,3 +33,6 @@ LABEL version="1.0"
 #  aws ecr get-login-password --region ap-northeast-2 --profile haai-infra-shared | docker login --username AWS --password-stdin 211125543833.dkr.ecr.ap-northeast-2.amazonaws.com
 #
 #  docker buildx build --push --builder multiarch --platform linux/amd64,linux/arm64 -t 211125543833.dkr.ecr.ap-northeast-2.amazonaws.com/haai-test-repository .
+# aws ecr describe-images --repository-name haai-test-repository --profile haai-infra-shared
+# docker manifest inspect 211125543833.dkr.ecr.ap-northeast-2.amazonaws.com/haai-test-repository
+# https://www.amarjanica.com/build-multi-arch-docker-images-with-buildx-and-ecr
